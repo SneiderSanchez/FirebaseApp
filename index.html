@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Taller 1 Moviles </title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="button__list">
+    <div id='root'>
+      <img src="" alt="" id="avatar">
+    </div>
+    <button type="button" class="google-button" id='loginGoogle'>
+      <img src="https://img.icons8.com/color/480/google-logo.png" alt="google icon" class="google-button__icon">
+      <span class="button__text">Sign in with Google</span>
+    </button>
+
+    <button id='loginFacebook' class="facebook-button">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/600px-Facebook_icon_2013.svg.png"
+        alt="facebook icon" class="google-button__icon">
+      <span class="button__text">Sign in with Facebook</span>
+    </button>
+    <button id='loginTwitter' class="twitter-button">
+      <img src="https://blogs.uab.cat/marketingdigital/files/2016/01/Twitterlogo.jpg" alt="twitter icon"
+        class="twitter-button__icon">
+      <span class="button__text">Sign in with Twitter</span>
+    </button>
+
+  </div>
+
+
+  <!-- Music List -->
+  <section>
+    <div>
+      <h2 sty>
+        <span>Music</span>
+        <img onClick="showForm();" src="https://image.flaticon.com/icons/svg/1828/1828817.svg" alt="edit icon"
+          class="addMusic">
+        <small>List
+        </small>
+
+      </h2>
+    </div>
+    <table id='music__list' class="table__container">
+      <tr>
+        <th>Artist</th>
+        <th>Song Name</th>
+        <th>Year</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Add and Edit form -->
+  <section id='formActionContainer' class="hidden">
+    <h2 id='formActionText'>Add Music <small>Inputs</small></h2>
+    <form id="newMusicForm">
+      <div class="group">
+        <input type="text" id="artist" name="artist" required />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Artist</label>
+      </div>
+      <div class="group">
+        <input type="text" id="songName" name="songName" required />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Song Name</label>
+      </div>
+      <div class="group">
+        <input type="Number" id="year" name="year" required />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Year</label>
+      </div>
+      <button type="submit" id='buttonActionForm'> Add New Music</button>
+      <a onclick="hideForm();" class='cancel-Form'> Cancel </a>
+    </form>
+  </section>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src=" https://www.gstatic.com/firebasejs/7.14.2/firebase.js">
+  </script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD2zreTQeei_-gqCB1_Z9wMo3hMeq7-_qQ",
+      authDomain: "taller1-3ercorte.firebaseapp.com",
+      databaseURL: "https://taller1-3ercorte.firebaseio.com",
+      projectId: "taller1-3ercorte",
+      storageBucket: "taller1-3ercorte.appspot.com",
+      messagingSenderId: "268367322182",
+      appId: "1:268367322182:web:b4d9d02c2c382ea5d6be47",
+      measurementId: "G-EXZP850NN5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src='/app.js'></script>
+
+  <script src='/database.js'></script>
+
+
+</body>
+
+
+</html>
